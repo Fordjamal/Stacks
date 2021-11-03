@@ -1,0 +1,9 @@
+const items = new WeakMap(); //{1} declaring the items variable as WeakMap
+
+class Stack {
+    constructor() {
+        items.set(this, []); // {2} Setting the items value inside the constructor by setting this (reference to Stack class) as the key of the WeakMap and the array that represents the stack as its value
+    } 
+    push(element) {
+        const s = items.get(this); // {3} we retrieve the value of the items by retrieving the value from WeakMap, that is, by passing this as the key(that we set in line {2})
+    }
